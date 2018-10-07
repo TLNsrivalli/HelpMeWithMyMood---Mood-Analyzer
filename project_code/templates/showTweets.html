@@ -1,0 +1,38 @@
+<style>
+.button {
+    background-color: #008CBA; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+div.right {
+    position: absolute;
+    right: 0;
+    width: 100px;
+    height: 120px;
+}
+
+</style>
+<div class=right>
+<form action="/searchTweets" method = "post">
+  <input type="hidden" name = "username" value = {{session['username']}}>
+  <input type="submit" class="button" value="back">
+</form>
+</div>
+<center><h1><b><i>Tweets</i></b></h1><br></center>
+{% for t in session['tweets'] %}
+ {{t}}<br>
+{% endfor %}
+<h2><i>Emotion</i></h2>
+<img src="static/img/joy.png" height=50px>&nbsp<b>Joy - </b>&nbsp{{session['analysis']['emotion']['document']['emotion']['joy']*100}}&nbsp&nbsp
+<img src="static/img/sad.png" height=50px>&nbsp<b>Sad - </b>&nbsp{{session['analysis']['emotion']['document']['emotion']['sadness']*100}}&nbsp&nbsp
+<img src="static/img/disguist.jpg" height=50px>&nbsp<b>Disguist - </b>&nbsp{{session['analysis']['emotion']['document']['emotion']['disgust']*100}}&nbsp&nbsp
+<img src="static/img/fear.png" height=50px>&nbsp<b>Fear - </b>&nbsp{{session['analysis']['emotion']['document']['emotion']['fear']*100}}&nbsp&nbsp
+<img src="static/img/anger.png" height=50px>&nbsp<b>Anger - </b>&nbsp{{session['analysis']['emotion']['document']['emotion']['anger']*100}}
+</body>

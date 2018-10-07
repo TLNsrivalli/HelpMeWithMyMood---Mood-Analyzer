@@ -1,0 +1,77 @@
+<style>
+.button {
+    background-color: #008CBA; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+div.right {
+    position: absolute;
+    right: 0;
+    width: 100px;
+    height: 100px;
+}
+</style>
+
+<body background="static/img/today.jpg"></body>
+<div class=right><a href = "/"><input type="button" class="button" value="back"></a></div>
+<center>
+<h2>Username&nbsp:&nbsp&nbsp<i>{{username}}</i></h2>
+
+  {% if  persistent == "Joy" %}
+    <h2><i>Looks like you are in a very happy mood</h2></i>
+    <br><br>
+    <b>This music will make your mood more better</b>
+    <br><br>
+    <audio controls>
+      <source src="static/music/Happiness.mp3" type="audio/mpeg"/>
+    </audio>
+  {% endif %}
+  {% if  persistent == "Sadness" %}
+    <h2><i>Looks like you are quite sad</h2></i>
+    <br><br>
+    <b>Hope this music will make your mood better</b>
+    <br><br>
+    <audio controls>
+      <source src="static/music/Sad.mp3" type="audio/mpeg"/>
+    </audio>
+  {% endif %}
+  {% if  persistent == "Fear" %}
+    <h2><i>Looks like you are frightened</h2></i>
+    <br><br>
+    <b>Hope this music will make your mood better</b>
+    <br><br>
+    <audio controls>
+      <source src="static/music/Fear.mp3" type="audio/mpeg"/>
+    </audio>
+  {% endif %}
+  {% if  persistent == "Disguist" %}
+    <h2><i>Looks like your mood is not fine</h2></i>
+    <br><br>
+    <b>Hope this music will make your mood better</b>
+    <br><br>
+    <audio controls>
+      <source src="static/music/Disguist.mp3" type="audio/mpeg"/>
+    </audio>
+  {% endif %}
+  {% if  persistent == "Anger" %}
+    <h2><i>Looks like your mood is not fine</h2></i>
+    <br><br>
+    <b>Hope this music will make your mood better</b>
+    <br><br>
+    <audio controls>
+      <source src="static/music/Anger.mp3" type="audio/mpeg"/>
+    </audio>
+  {% endif %}
+
+<br>
+<form action="/showTweets" method = "post">
+  <input type="submit" class="button" value="See Tweets">
+</form>
+</center>
